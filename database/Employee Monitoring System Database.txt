@@ -1,0 +1,105 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `monitoringsystem`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `empinfo`
+--
+
+CREATE TABLE `empinfo` (
+  `id` int(11) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `mname` varchar(50) DEFAULT NULL,
+  `gender` varchar(50) NOT NULL,
+  `birthday` date DEFAULT NULL,
+  `age` int(11) DEFAULT NULL,
+  `philhealth` varchar(50) DEFAULT 'N/A',
+  `pagibig` varchar(50) DEFAULT 'N/A',
+  `sss` varchar(50) DEFAULT 'N/A',
+  `tin` varchar(50) DEFAULT 'N/A',
+  `address` varchar(200) DEFAULT NULL,
+  `nationality` varchar(50) NOT NULL,
+  `position` varchar(50) NOT NULL,
+  `department` varchar(50) NOT NULL,
+  `station` varchar(50) NOT NULL,
+  `clients` varchar(50) NOT NULL,
+  `contractstatus` varchar(50) NOT NULL,
+  `resignation` varchar(50) DEFAULT 'N/A',
+  `datehired` date DEFAULT NULL,
+  `lastdayofwork` varchar(50) DEFAULT 'N/A',
+  `dateofawol` varchar(50) DEFAULT 'N/A',
+  `status` varchar(50) NOT NULL,
+  `attrition` varchar(50) NOT NULL,
+  `firstcontract` tinyint(4) DEFAULT NULL,
+  `secondcontract` tinyint(4) DEFAULT NULL,
+  `thirdcontract` tinyint(4) DEFAULT NULL,
+  `contractstart` date DEFAULT NULL,
+  `contractend` date DEFAULT NULL,
+  `awol` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `userId` int(11) NOT NULL,
+  `userName` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `admin` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userId`, `userName`, `password`, `admin`) VALUES
+(1, 'admin', 'admin', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `empinfo`
+--
+ALTER TABLE `empinfo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `empinfo`
+--
+ALTER TABLE `empinfo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=787;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
