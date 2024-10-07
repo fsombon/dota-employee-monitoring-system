@@ -1,6 +1,6 @@
-# Employee-Management-System
+# Employee-Monitoring-System
 
-A simple Employee Management System where you can 
+A simple Employee Monitoring System where you can 
 
 Add
 Update
